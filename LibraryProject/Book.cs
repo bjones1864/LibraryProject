@@ -8,14 +8,29 @@ namespace LibraryProject
         public string Title { get; set; }
         public string Author { get; set; }
         public bool IsOnShelf { get; set; }
-        public string DueDate { get; set; }
+        public DateTime DueDate;
 
-        public Book(string _title, string _author, bool _isOnShelf, string _dueDate)
+        public Book(string _title, string _author, bool _isOnShelf)
         {
             Title = _title;
             Author = _author;
             IsOnShelf = _isOnShelf;
-            DueDate = _dueDate;
+        }
+
+        public string OnShelf()
+        {
+            return IsOnShelf ? "On Shelf" : "Checked Out";
+        }
+
+        public void CheckOut()
+        {
+            DueDate = DateTime.Now.AddDays(14);
+            IsOnShelf = false;
+        }
+
+        public void Return()
+        {
+            IsOnShelf = true;
         }
 
     }
