@@ -2,6 +2,7 @@
 using static System.Collections.Specialized.BitVector32;
 using System.Reflection.Metadata;
 
+string filepath = "../../../books.txt";
 Console.WriteLine("Welcome to Best Seller's Library!");
 
 List<Book> bestSellers = new List<Book>();
@@ -20,9 +21,23 @@ bestSellers.Add(new Book("The Girl on the Train", "Paula Hawkins", true));
 
 do
 {
+    Console.WriteLine("Please choose what you would like to do.");
+    int userChoice = GetUserChoice();
+    switch (userChoice)
+    {
+        case 1:
+            DisplayBooks(bestSellers);
+            break;
+        case 2: 
+            SearchByTitle(bestSellers); 
+            break; 
+        case 3: SearchByAuthor(bestSellers);
+            break;
+        case 4:  
+    }
 
-} while (true);
-
+    
+} while (true); 
 
 
 static void DisplayBooks(List<Book> bookList)
@@ -48,6 +63,24 @@ static Book SearchByTitle(List<Book> bookList)
     return null;
 }
 
+static int GetUserChoice()
+{
+   
+    Console.WriteLine("1. Display all books.");
+    Console.WriteLine("2. Search by title.");
+    Console.WriteLine("3. Search by author.");
+    Console.WriteLine("4. Check out book.");
+    Console.WriteLine("5. Return book.");
+    int choice;
+    while(!int.TryParse(Console.ReadLine().Trim(), out choice) || choice < 1 || choice > 5)
+    {
+        
+        Console.WriteLine("Invalid input."); 
+        
+    }
+
+    return choice;
+}
 static Book SearchByAuthor(List<Book> bookList)
 {
     Console.WriteLine("Please enter the author of the book you are looking for");

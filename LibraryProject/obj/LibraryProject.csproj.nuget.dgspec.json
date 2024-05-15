@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\miwol\\source\\repos\\LibraryProject\\LibraryProject\\LibraryProject.csproj": {}
+    "C:\\Users\\jacky\\projects\\LibraryProject\\LibraryProject\\LibraryProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\miwol\\source\\repos\\LibraryProject\\LibraryProject\\LibraryProject.csproj": {
+    "C:\\Users\\jacky\\projects\\LibraryProject\\LibraryProject\\LibraryProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\miwol\\source\\repos\\LibraryProject\\LibraryProject\\LibraryProject.csproj",
+        "projectUniqueName": "C:\\Users\\jacky\\projects\\LibraryProject\\LibraryProject\\LibraryProject.csproj",
         "projectName": "LibraryProject",
-        "projectPath": "C:\\Users\\miwol\\source\\repos\\LibraryProject\\LibraryProject\\LibraryProject.csproj",
-        "packagesPath": "C:\\Users\\miwol\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\miwol\\source\\repos\\LibraryProject\\LibraryProject\\obj\\",
+        "projectPath": "C:\\Users\\jacky\\projects\\LibraryProject\\LibraryProject\\LibraryProject.csproj",
+        "packagesPath": "C:\\Users\\jacky\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jacky\\projects\\LibraryProject\\LibraryProject\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\miwol\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\jacky\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
