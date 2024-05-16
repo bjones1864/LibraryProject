@@ -81,6 +81,9 @@ do
             DonateBook(bestSellers);
             break;
         case 7:
+            BurnItDown(bestSellers);
+            break;
+        case 8:
             keepgoing = false; 
             break;
     }
@@ -164,9 +167,10 @@ static int GetUserChoice()
     Console.WriteLine("4. Check out book.");
     Console.WriteLine("5. Return book.");
     Console.WriteLine("6. Donate book.");
-    Console.WriteLine("7. Exit.");
+    Console.WriteLine("7. Farenheit 451 Mode!");
+    Console.WriteLine("8. Exit.");
     int choice;
-    while(!int.TryParse(Console.ReadLine().Trim(), out choice) || choice < 1 || choice > 7)
+    while(!int.TryParse(Console.ReadLine().Trim(), out choice) || choice < 1 || choice > 8)
     {
         
         Console.WriteLine("Invalid input."); 
@@ -274,4 +278,20 @@ static void DonateBook(List<Book> booklist)
 static string MakeSmall(string str, int maxChars)
 {
     return str.Length <= maxChars ? str : str.Substring(0, maxChars) + "...";
+}
+
+static void BurnItDown(List<Book> booklist)
+{
+    Random rnd = new Random();
+    int redButton = rnd.Next(1, booklist.Count);
+    for (int i = 0; i < redButton -1; i++)
+    {
+        booklist.RemoveAt(i);
+
+
+    }
+    Console.BackgroundColor = ConsoleColor.DarkRed;
+    Console.Clear();
+    Console.WriteLine("THE LIBRARY IS BURNING!!!");
+   
 }
