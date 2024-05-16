@@ -28,14 +28,17 @@ do
         case 1:
             DisplayBooks(bestSellers);
             break;
-        case 2: 
-            SearchByTitle(bestSellers); 
+        case 2:
+            DisplayBook(SearchByTitle(bestSellers));
             break; 
-        case 3: SearchByAuthor(bestSellers);
+        case 3: DisplayBook(SearchByAuthor(bestSellers));
             break;
-        case 4:  
+        case 4:  CheckOutbook(bestSellers);
+            break;
+        case 5: ReturnBook(bestSellers);
+            break;
     }
-
+    
     
 } while (true); 
 
@@ -48,10 +51,23 @@ static void DisplayBooks(List<Book> bookList)
             b.Title, b.Author, b.OnShelf()));
     }
 }
-
-static Book SearchByTitle(List<Book> bookList)
+static void DisplayBook( Book SingleBook)
 {
-    Console.WriteLine("Please enter the title of the book you are looking for");
+     
+    if(SingleBook == null)
+    {
+        Console.WriteLine("Error, not found in system.");
+    }
+    else
+    {
+        Console.WriteLine(String.Format("{0, -40}{1, -40}{2, -40}",
+     SingleBook.Title, SingleBook.Author, SingleBook.OnShelf()));
+    }
+    }
+
+    static Book SearchByTitle(List<Book> bookList)
+{
+    Console.WriteLine("Please enter the title of the book.");
     string input = Console.ReadLine().Trim();
     foreach(Book b in bookList)
     {
@@ -94,3 +110,43 @@ static Book SearchByAuthor(List<Book> bookList)
     }
     return null;
 }
+
+static void CheckOutbook(List<Book> bookList)
+    {
+    Book bookB = SearchByTitle(bookList);
+    if(bookB == null) 
+    {
+        Console.WriteLine("Sorry we don't have that book.");
+    }
+    else if ( !bookB.IsOnShelf)
+    {
+
+        Console.WriteLine($"Sorry, {bookB.Title} is already checked out.");
+    }
+    else
+    {
+        bookB.CheckOut();
+        Console.WriteLine($"{bookB.Title} is checked out. Your due date is {bookB.DueDate} ");
+    }
+    }
+
+static void ReturnBook(List<Book>booklist)
+    {
+    Book Bookc = SearchByTitle(booklist);
+    if (Bookc == null)
+    {
+        Console.WriteLine("Sorry, that book is not apart of our inventory.");
+    }
+    else if(Bookc.IsOnShelf) 
+    {
+        Console.WriteLine($"{Bookc.Title}is already checked in.");
+
+    }
+    else
+    {
+        Bookc.Return();
+        Console.WriteLine($"Thank you for returning {Bookc.Title}");
+    }
+   
+}
+
