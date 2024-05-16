@@ -8,13 +8,15 @@ namespace LibraryProject
         public string Title { get; set; }
         public string Author { get; set; }
         public bool IsOnShelf { get; set; }
+        public double RetailPrice { get; set; }
         public DateTime DueDate;
 
-        public Book(string _title, string _author, bool _isOnShelf)
+        public Book(string _title, string _author, bool _isOnShelf, double _retailPrice)
         {
             Title = _title;
             Author = _author;
             IsOnShelf = _isOnShelf;
+            RetailPrice = _retailPrice;
         }
 
         public string OnShelf()

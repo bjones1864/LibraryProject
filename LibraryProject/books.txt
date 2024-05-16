@@ -1,12 +1,12 @@
-The Hunger Games|Suzzanne Collins|False
-Station Eleven|Emily St.John Mandel|True
-The Underground Railroad|Colson Whitehead|True
-Pachinko|Min Jin Lee|True
-The Song of Achilles|Madeline Miller|True
-The Hate U Give|Angie Thomas|True
-The Testaments|Margaret Atwood|True
-The Night Circus|Erin Morgenstern|True
-Educated|Tara Westover|True
-Where the Crawdads Sing|Delia Owens|True
-Circe|Madeline Miller|True
-The Girl on the Train|Paula Hawkins|True
+The Hunger Games|Suzzanne Collins|True|9.79
+Station Eleven|Emily St.John Mandel|True|11.01
+The Underground Railroad|Colson Whitehead|True|7.38
+Pachinko|Min Jin Lee|False|12.79
+The Song of Achilles|Madeline Miller|True|13.48
+The Hate U Give|Angie Thomas|True|10.2
+The Testaments|Margaret Atwood|True|8
+The Night Circus|Erin Morgenstern|True|13.4
+Educated|Tara Westover|True|12.35
+Where the Crawdads Sing|Delia Owens|True|13
+Circe|Madeline Miller|False|13
+The Girl on the Train|Paula Hawkins|True|9.99
