@@ -1,24 +1,61 @@
 ﻿using LibraryProject;
 using static System.Collections.Specialized.BitVector32;
 using System.Reflection.Metadata;
+using System.Diagnostics;
+using System.Threading.Channels;
 
 string filepath = "../../../books.txt";
-Console.WriteLine("Welcome to Best Seller's Library!");
+if (!File.Exists(filepath))
+{
+    StreamWriter writer = new StreamWriter(filepath);
+    writer.WriteLine("The Hunger Games|Suzzanne Collins|true");
+    writer.WriteLine("Station Eleven|Emily St.John Mandel|true");
+    writer.WriteLine("The Underground Railroad|Colson Whitehead|true");
+    writer.WriteLine("Pachinko|Min Jin Lee|true");
+    writer.WriteLine("The Song of Achilles|Madeline Miller|true");
+    writer.WriteLine("The Hate U Give|Angie Thomas|true");
+    writer.WriteLine("The Testaments|Margaret Atwood|true");
+    writer.WriteLine("The Night Circus|Erin Morgenstern|true");
+    writer.WriteLine("Educated|Tara Westover|true");
+    writer.WriteLine("Where the Crawdads Sing|Delia Owens|true");
+    writer.WriteLine("Circe|Madeline Miller|true");
+    writer.WriteLine("The Girl on the Train|Paula Hawkins|true");
+    writer.Close(); 
+
+}
 
 List<Book> bestSellers = new List<Book>();
-bestSellers.Add(new Book("The Hunger Games", "Suzzanne Collins", true));
-bestSellers.Add(new Book("Station Eleven", "Emily St.John Mandel", true));
-bestSellers.Add(new Book("The Underground Railroad", "Colson Whitehead", true));
-bestSellers.Add(new Book("Pachinko", "Min Jin Lee", true));
-bestSellers.Add(new Book("The Song of Achilles", "Madeline Miller", true));
-bestSellers.Add(new Book("The Hate U Give", "Angie Thomas", true));
-bestSellers.Add(new Book("The Testaments", "Margaret Atwood", true));
-bestSellers.Add(new Book("The Night Circus", "Erin Morgenstern", true));
-bestSellers.Add(new Book("Educated", "Tara Westover", true));
-bestSellers.Add(new Book("Where the Crawdads Sing", "Delia Owens", true));
-bestSellers.Add(new Book("Circe", "Madeline Miller", true));
-bestSellers.Add(new Book("The Girl on the Train", "Paula Hawkins", true));
+StreamReader Reader = new StreamReader(filepath);
+do
+{
+    string line = Reader.ReadLine();
+    if (line == null)
+    {
+        break; 
+    }
+    else
+    {
+        string[] words = line.Split("|");
+        Book b = new Book(words[0], words[1], bool.Parse(words[2]));
+        bestSellers.Add(b);
+    } 
+} while (true);
+Reader.Close();
+Console.WriteLine("Welcome to Best Seller's Library!");
 
+//bestSellers.Add(new Book("The Hunger Games", "Suzzanne Collins", true));
+//bestSellers.Add(new Book("Station Eleven", "Emily St.John Mandel", true));
+//bestSellers.Add(new Book("The Underground Railroad", "Colson Whitehead", true));
+//bestSellers.Add(new Book("Pachinko", "Min Jin Lee", true));
+//bestSellers.Add(new Book("The Song of Achilles", "Madeline Miller", true));
+//bestSellers.Add(new Book("The Hate U Give", "Angie Thomas", true));
+//bestSellers.Add(new Book("The Testaments", "Margaret Atwood", true));
+//bestSellers.Add(new Book("The Night Circus", "Erin Morgenstern", true));
+//bestSellers.Add(new Book("Educated", "Tara Westover", true));
+//bestSellers.Add(new Book("Where the Crawdads Sing", "Delia Owens", true));
+//bestSellers.Add(new Book("Circe", "Madeline Miller", true));
+//bestSellers.Add(new Book("The Girl on the Train", "Paula Hawkins", true));
+bool keepgoing = true; 
 do
 {
     Console.WriteLine("Please choose what you would like to do.");
@@ -37,12 +74,20 @@ do
             break;
         case 5: ReturnBook(bestSellers);
             break;
+        case 6: keepgoing = false; 
+            break;
     }
     
     
-} while (true); 
+} while (keepgoing); 
 
-
+StreamWriter writer2 = new StreamWriter(filepath);
+foreach (Book b in bestSellers)
+{ 
+    writer2.WriteLine($"{b.Title}|{b.Author}|{b.IsOnShelf.ToString()}");
+    
+} 
+writer2.Close();
 static void DisplayBooks(List<Book> bookList)
 {
     foreach(Book b in bookList)
@@ -87,8 +132,9 @@ static int GetUserChoice()
     Console.WriteLine("3. Search by author.");
     Console.WriteLine("4. Check out book.");
     Console.WriteLine("5. Return book.");
+    Console.WriteLine("6. Exit.");
     int choice;
-    while(!int.TryParse(Console.ReadLine().Trim(), out choice) || choice < 1 || choice > 5)
+    while(!int.TryParse(Console.ReadLine().Trim(), out choice) || choice < 1 || choice > 6)
     {
         
         Console.WriteLine("Invalid input."); 
@@ -148,5 +194,6 @@ static void ReturnBook(List<Book>booklist)
         Console.WriteLine($"Thank you for returning {Bookc.Title}");
     }
    
+
 }
 
