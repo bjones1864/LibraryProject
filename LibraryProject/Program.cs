@@ -110,6 +110,14 @@ foreach (Book b in bestSellers)
 } 
 writer2.Close();
 
+StreamWriter writer3 = new StreamWriter(movieFilepath);
+foreach (Book b in movieList)
+{
+    writer3.WriteLine($"{b.Title}|{b.Author}|{b.IsOnShelf.ToString()}|{b.RetailPrice}");
+
+}
+writer3.Close();
+
 static List<Book> ListBuilder(string file)
 {
     List<Book> l = new List<Book>();
