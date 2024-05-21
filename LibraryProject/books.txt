@@ -8,7 +8,5 @@ The Testaments|Margaret Atwood|True|8
 The Night Circus|Erin Morgenstern|True|13.4
 Educated|Tara Westover|True|12.35
 Where the Crawdads Sing|Delia Owens|True|13
-Circe|Madeline Miller|True|13
+Circe|Madeline Miller|False|13
 The Girl on the Train|Paula Hawkins|True|9.99
-How To Read A Book|Mortimer Adler|True|10
-Mythology|Edith Hamilton|True|10

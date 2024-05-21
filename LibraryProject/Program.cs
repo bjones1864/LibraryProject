@@ -99,7 +99,7 @@ do
     
 } while (keepgoing); 
 
-Console.WriteLine($"Thank you for using our library! You saved ${moneySaved} today by checking out books instead of buying them!");
+Console.WriteLine($"Thank you for using our library! You saved ${moneySaved.ToString("#.00")} today by checking out books instead of buying them!");
 Console.WriteLine("Support your local library!");
 
 StreamWriter writer2 = new StreamWriter(filepath);

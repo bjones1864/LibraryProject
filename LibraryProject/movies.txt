@@ -1,8 +1,8 @@
-The Avengers|Joss Whedon|true|9.84
-The Dark Knight Rises|Christopher Nolan|true|9.99
-Frozen|Chris Buck and Jennifer Lee|true|19.52
-Star Wars: The Force Awakens|J.J. Abrams|true|13.99
-Guardians of the Galaxy|James Gunn|true|13.99
-Spider-Man: Into the Spider-Verse|Bob Persichetti|true|10.59
-Black Panther|Ryan Coogler|true|13.59
-Dune|Denis Villeneuve|true|9.96
+The Avengers|Joss Whedon|True|9.84
+The Dark Knight Rises|Christopher Nolan|False|9.99
+Frozen|Chris Buck and Jennifer Lee|True|19.52
+Star Wars: The Force Awakens|J.J. Abrams|True|13.99
+Guardians of the Galaxy|James Gunn|True|13.99
+Spider-Man: Into the Spider-Verse|Bob Persichetti|True|10.59
+Black Panther|Ryan Coogler|True|13.59
+Dune|Denis Villeneuve|True|9.96
